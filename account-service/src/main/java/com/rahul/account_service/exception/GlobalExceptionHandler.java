@@ -15,6 +15,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
 
     //Common method if user defined exception not occur then this method will be run and display message
+    //to check how this will , remove @AllArgsConstructor from controller, this will lead to failing in bean creation of IAccountservice
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponseDto> handleGlobalException(Exception exception,
                                                                   WebRequest webRequest) {
