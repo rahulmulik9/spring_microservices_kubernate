@@ -1,11 +1,9 @@
 package com.rahul.account_service.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Id;
 import lombok.Data;
 
 @Data
-public class AccountDto {
+public class AccountsDto {
 
     private Long accountNumber;
 
