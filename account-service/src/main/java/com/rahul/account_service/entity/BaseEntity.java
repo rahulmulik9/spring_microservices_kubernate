@@ -2,12 +2,16 @@ package com.rahul.account_service.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @MappedSuperclass
-@Data
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class BaseEntity {
     @Column(updatable = false)
     private LocalDateTime createdAt;
