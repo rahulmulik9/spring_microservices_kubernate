@@ -97,7 +97,7 @@ public class AccountsServiceImpl implements IAccountsService {
                 () -> new ResourceNotFoundException("Customer", "mobileNumber", mobileNumber)
         );
         accountsRepository.deleteByCustomerId(customer.getCustomerId());
-        customerRepository.deleteById(customer.getCustomerId());
+        customerRepository.deleteById(customer.getCustomerId());  //transactional and modifying are not used for this as this API is given by spring jpa not created by user.
         return true;
     }
 
