@@ -21,6 +21,9 @@ import java.util.Map;
 @ControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
+    //this is method present in ResponseEntityExceptionHandler
+    //this method invoke when validation fails.
+    //if multiple validation fails it will store all the messages in map and send it into response
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
         Map<String, String> validationErrors = new HashMap<>();
