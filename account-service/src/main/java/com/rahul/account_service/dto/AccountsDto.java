@@ -19,6 +19,6 @@ public class AccountsDto {
     private String accountType;
 
     @NotEmpty(message = "BranchAddress can not be a null or empty")
-    @Schema(description = "Bank branch address", example = "123 NewYork")
+    @Schema(description = "Bank branch address", example = "123 Mumbai")
     private String branchAddress;
 }
