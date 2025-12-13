@@ -8,7 +8,7 @@ import lombok.*;
 @Setter
 @ToString
 @AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor  //here @Data is not used because sometime toHash method cause some error in spring boot so Getter,Setter, ToString separately annotated.
 public class Customer extends  BaseEntity {
 
     @Id
