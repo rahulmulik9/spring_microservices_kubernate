@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(path = "/api", produces = MediaType.APPLICATION_JSON_VALUE)//this will support json response (produces)
 @AllArgsConstructor
-@Validated
+@Validated  // this tell spring that validate data as per dto class validation
 public class AccountController {
 
     private IAccountsService iAccountsService;
