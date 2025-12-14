@@ -9,4 +9,3 @@ import org.springframework.stereotype.Service;
 public class LoansServiceImpl implements ILoansService {
 
 }
-
