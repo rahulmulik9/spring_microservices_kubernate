@@ -32,7 +32,7 @@ public class CardsController {
 
 
     @Operation(summary = "Create Card REST API", description = "REST API to create new Card inside EazyBank")
-    @ApiResponses({
+    @ApiResponses({ //api response for swager ui
             @ApiResponse(responseCode = "201", description = "HTTP Status CREATED"),
             @ApiResponse(
                     responseCode = "500",
