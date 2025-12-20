@@ -1,0 +1,13 @@
+spring:
+  config:
+    activate:
+      on-profile: "qa"
+
+build:
+  version: "2.0"
+
+cards:
+  message: "Welcome to Bank cards related QA APIs "
+  contactDetails:
+    name: "Rahul Mulik - Lead"
+    email: "qa1@bank.com"
