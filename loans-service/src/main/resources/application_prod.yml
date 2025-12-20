@@ -1,0 +1,13 @@
+spring:
+  config:
+    activate:
+      on-profile: "dev"
+
+build:
+  version: "2.0"
+
+cards:
+  message: "Welcome to Bank cards dev APIs "
+  contactDetails:
+    name: "Rahul Mulik - Lead"
+    email: "dev1@bank.com"
