@@ -13,21 +13,27 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Value;
 
 
 @Tag(name = "CRUD REST APIs for Loans in Bank", description = "CRUD REST APIs in Bank to CREATE, UPDATE, FETCH AND DELETE loan details")
 @RestController
 @RequestMapping(path = "/api", produces = {MediaType.APPLICATION_JSON_VALUE})
 @AllArgsConstructor
+@RequiredArgsConstructor
 @Validated
 public class LoansController {
 
     private ILoansService iLoansService;
+
+    @Value("${build.version}")
+    private String buildVersion;
 
     @Operation(summary = "Create Loan REST API", description = "REST API to create new loan inside EazyBank")
     @ApiResponses({
@@ -111,5 +117,20 @@ public class LoansController {
                     .status(HttpStatus.EXPECTATION_FAILED)
                     .body(new ResponseDto(LoansConstants.STATUS_417, LoansConstants.MESSAGE_417_DELETE));
         }
+    }
+
+
+
+
+    @Operation(summary = "Get Build information", description = "Get Build information that is deployed into cards microservice")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "HTTP Status OK"),
+            @ApiResponse(responseCode = "500", description = "HTTP Status Internal Server Error", content = @Content(schema = @Schema(implementation = ErrorResponseDto.class)))
+    })
+    @GetMapping("/build-info")
+    public ResponseEntity<String> getBuildInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(buildVersion);
     }
 }
