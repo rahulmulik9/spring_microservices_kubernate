@@ -1,0 +1,2 @@
+In application, we have set the version and other parameters of applicaiton using yml files.
+This can be done or set useing programm argument and enviorment variables.
